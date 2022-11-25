@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mark Yamane</title>
+        <link rel="stylesheet" href="mty.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="mty.js"></script>
+        <script src="https://kit.fontawesome.com/bfa72b7279.js" crossorigin="anonymous"></script>
+        <link rel="icon" href="images/MYicon.jpg" type="image/png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    </head>
+    <body>
+        <header id="topHeader">
+            <div id="layer"> <!-- start web title -->
+                <h1>Mark Yamane</h1>
+            </div> <!-- end web title -->
+            <div>
+                <button value="title" onclick="toAbout()" id="scrollAbout"><p>Learn about me!</p><i class="down"></i></button>
+            </div>
+        </header>
+        <div id="stickyOffset"></div>
+        <div id="title"> <!-- start sticky title -->
+            <p>Mark Yamane</p>
+        </div> <!-- end sticky title -->
+        <div id="aboutMe">
+            <h2>About Me</h2>
+            <p>
+                Hi, I'm Mark Yamane!
+                I am a second-year student at Eckerd College studying Computer Science and Marine Science (biology track).
+                My interest in the ocean has driven my pursuits in both ocean research and data science, so in my
+                free time you can find me hiking around Washington, scuba diving off of Edmonds, or taking low-tide beach walks in West Seattle.
+            </p>
+        </div>
+        <div class="section" style="background-color: rgba(9,32,63,.85);">
+            <h2>Projects</h2>
+            <!-- <h3>Here are some cool projects I've worked on!</h3> -->
+            <div class="clearfix img-left">
+                <img src="images/lionfish.jpg" alt="Lionfish">
+                <div class="div-right">
+                    <h3>biod</h3>
+                    <p>
+                        I created an R package out of functions I used to perform biodiversity analyses on data from visual dive surveys 
+                        I conducted with a group for my Winter Term in Roatan, Honduras. We conducted a study on the effects of lionfish derbies 
+                        on the native predator fish assemblages (which now compete with the invasive lionfish). This package has functions to 
+                        find species richness, species evenness, and Shannon diversity index for uni-, bi-, and multivariate data from a csv 
+                        file. 'biod' also includes some functions for graphing the diversity values.
+                    </p>
+                    <p style="padding-top: 5px;">
+                        <b>Tech Used:</b> R (dplyr, ggplot), RStudio
+                    </p>
+                </div> <!-- end section content div -->
+            </div> <!-- end clearfix div -->
+            <div class="clearfix img-right">
+                <a href="https://github.com/mtyamane/Raxin" target="_blank"><img src="images/raxin-demo.gif" alt="Demo of Raxin"></a>
+                <div class="div-left">
+                    <a href="https://github.com/mtyamane/Raxin" target="_blank"><h3>Raxin</h3></a>
+                    <p>
+                        I created a discord bot called "Raxin" to facilitate reaction polls in Discord. I was the president of Tabletop Club at
+                        Eckerd College when COVID hit the US in March 2021, so when Tabletop Club had to go virtual I chose Discord as the solution.
+                        When we split out into groups or were deciding what games to play, it was often way too chaotic to go off of the chat 
+                        or audio conversations.I decided to create a bot to easily and intuitively create polls where people could respond using 
+                        the given reactions attached to the polls. This bot was used many times when we were virtual and still when we phased 
+                        back to in-person meetings.
+                    </p>
+                    <p style="padding-top: 5px;">
+                        <b>Tech Used:</b> Javascript, Node.JS
+                    </p>
+                </div> <!-- end section content div -->
+            </div> <!-- end clearfix div -->
+            <div class="clearfix img-left">
+                <img src="images/website.png" alt="Picture of this website">
+                <div class="div-right">
+                    <h3>This Website</h3>
+                    <p>
+                        I was assigned to take "Creation of a Personal Web Presence" for Autumn Term my first year at Eckerd. This class 
+                        taught how to create a website using HTML and CSS, as well as incorporated discussions about ethical problems in 
+                        the social media sphere. During sophomore year, I decided to take some time to learn more about CSS and JavaScript by
+                        making this site!
+                    </p>
+                    <p style="padding-top: 5px;">
+                        <b>Tech Used:</b> HTML, CSS, JavaScript
+                    </p>
+                </div> <!-- end section content div -->
+            </div> <!-- end clearfix div -->
+        </div> <!-- end sections div -->
+        <div class="section" style="background-color: rgba(9,32,63,.75);">
+            <h2>Research</h2>
+            <!-- <h3>Here are some research projects I've been a part of!</h3> -->
+            <div class="clearfix img-right">
+                <img src="images/tortoise.png" alt="Tortoise results">
+                <div class="div-left">
+                    <h3>Tortoise Recognition</h3>
+                    <p>
+                        Re-identification is a crucial time-consuming task for many studies on behavioral ecology. For my senior thesis at 
+                        Eckerd College, I developed a neural network with Dr. Michael Hilton to identify individual gopher tortoises based on 
+                        carapace markings in a manner similar to how facial recognition is used on humans. The model calculates a difference 
+                        value to return the five most similar gopher tortoises from a reference database. Once the model achieved 95% accuracy,
+                        we incorporated it into existing camera trap analysis software to aid future studies defining the social networks of 
+                        gopher tortoises at Boyd Hill Nature Preserve.
+
+                    </p>
+                    <p style="padding-top: 5px;">
+                        <b>Publication:</b> <a href="https://arxiv.org/abs/2206.05159" target="_blank">https://arxiv.org/abs/2206.05159</a>
+                    </p>
+                    <p>
+                        <b>Code:</b> <a href="https://github.com/hiltonml/camera_trap_tools" target="_blank">https://github.com/hiltonml/camera_trap_tools</a>
+                    </p>
+                </div> <!-- end section content div -->
+            </div> <!-- end clearfix div -->
+            <div class="clearfix img-left">
+                <img src="images/sds.jpg" alt="Picture of saildrones">
+                <div class="div-right">
+                    <h3>Arctic Weather Model Validation</h3>
+                    <p>
+                        As sea ice is diminishing at unprecedented rates, accurate weather forecasting of the Arctic Ocean is pertinent for 
+                        management and conservation of marine resources and coastal communities. During an REU at the Pacific Marine Environmental 
+                        Laboratory with Dr. Chidong Zhang, I validated ensemble forecasts from the European Centre for Medium-Range Weather 
+                        Forecasts (ECMWF) against observations from saildrones - remotely controlled uncrewed surface vehicles that measure 
+                        atmospheric and surface ocean variables. Forecast errors in dynamical variables began small and grew over time while 
+                        forecast errors in thermodynamical variables began large and stayed large over time up to a lead time of 15 days. This 
+                        study provides additional insights to the degree to which ensemble forecasts may be advantageous to deterministic 
+                        forecasts within the range of 15 days.
+                    </p>
+                    <p style="padding-top: 5px;">
+                        <b>Publication:</b> Not Published
+                    </p>
+                    <p>
+                        <b>Code:</b> <a href="https://agu.confex.com/agu/fm21/meetingapp.cgi/Paper/961273" target="_blank">https://agu.confex.com/agu/fm21/meetingapp.cgi/Paper/961273</a>
+                    </p>
+                </div> <!-- end section content div -->
+            </div> <!-- end clearfix div -->
+            <div class="clearfix img-right">
+                <img src="images/harvest-sites.jpg" alt="Demo of Raxin">
+                <div class="div-left">
+                    <h3><b>Harvest Cessation in Marine Reserves</h3>
+                    <p>
+                        Determining whether illegal harvest (poaching) has continued in a protected area is important to planning enforcement 
+                        and adaptive management.During an REU at Hatfield Marine Science Center with Dr. Will White, I used a state-space 
+                        integral projection model to estimate harvest rates for four kelp forest fish species inside marine protected areas (MPAs) 
+                        and non‐MPA reference sites in the California Channel Islands, from 2003 (when MPAs were implemented) to 2017. This 
+                        modeling approach could provide a tool to complement the long‐term management of MPA networks, particularly given the 
+                        difficulty of acquiring harvest rate data at the spatial scale of individual MPAs. This internship resulted in a 
+                        co-authored paper published to Conservation Letters.
+                    </p>
+                    <p style="padding-top: 5px;">
+                        <b>Publication:</b> <a href="https://conbio.onlinelibrary.wiley.com/doi/full/10.1111/conl.12775" target="_blank">https://conbio.onlinelibrary.wiley.com/doi/full/10.1111/conl.12775</a>
+                    </p>
+                    <p>
+                        <b>Code:</b> <a href="https://github.com/jwilsonwhite/IPM_statespace/tree/master/Channel_Islands" target="_blank">https://github.com/jwilsonwhite/IPM_statespace/tree/master/Channel_Islands</a>
+                    </p>
+
+                </div> <!-- end section content div -->
+            </div> <!-- end clearfix div -->
+        </div>
+        <footer>
+            <p><b>Contact Me!</b></p>
+            <!-- <p><b>4200 54th Ave S, Campus Box 1931, St. Petersburg, FL 33711</b></p> -->
+            <p>
+                <a href="mailto:marktyamane@gmail.com"><i class="far fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/mtyamane" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="pdfs/YamaneMark_Resume.pdf" target="_blank"><i class="far fa-file-pdf"></i></a>
+                <a href="https://github.com/mtyamane" target="_blank"><i class="fab fa-github"></i></a>
+            </p>
+            <button onclick="toTop()" id="scrollToTop"><p><b>Back to Top</b</p></a></button>
+        </footer>
+        <script type="text/javascript">
+            stickyHeader();
+            window.onscroll = function() {
+                changeOpacity();
+                stopBounce();
+                stickyHeader();
+            }
+            window.onresize = function() {
+                stickyHeader();
+            }
+        </script>
+    </body>
+</html>
