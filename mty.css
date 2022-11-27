@@ -68,9 +68,10 @@ p {
 }
 p a {
     color: rgba(255,255,255, 0.5);
+    
 }
 p a:hover {
-    text-decoration: underline;
+    color: white;
 }
 
 
