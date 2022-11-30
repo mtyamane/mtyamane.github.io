@@ -1,10 +1,9 @@
 /*
 Main CSS for My Website
 Mark Yamane
-Last Updated: 
 */
 
-html, body, div, .content, header, footer, h1, h2, h3, p {
+html, body, div, .content, header, footer, h1, h2, h3, h4, p {
     margin: 0;
     padding: 0;
 }
@@ -60,6 +59,9 @@ h3 {
     padding-bottom: 1vw;
     color: rgba(255,255,255, 0.65);
 }
+h4 {
+    font-weight: 300;
+}
 p {
     font-size: 21px;
     font-weight: 300;
@@ -97,16 +99,11 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 header h1 {
     font-size: 6vw;
-    -webkit-animation: fadeIn 1.5s;
-       -moz-animation: fadeIn 1.5s;
-        -ms-animation: fadeIn 1.5s;
-         -o-animation: fadeIn 1.5s;
-            animation: fadeIn 1.5s;
+    animation: fadeIn 1.5s;
 }
 /* 'scroll to about' button */
 #scrollAbout {
@@ -116,11 +113,6 @@ header h1 {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     animation: bounce .75s infinite alternate;
-    -webkit-animation: bounce .75s infinite alternate;
-       -moz-animation: bounce .75s infinite alternate;
-        -ms-animation: bounce .75s infinite alternate;
-         -o-animation: bounce .75s infinite alternate;
-            animation: bounce .75s infinite alternate;
     animation-delay: 1.5s; /* start animation when button appears */
 }
 header p {
@@ -128,11 +120,7 @@ header p {
     font-weight: 300;
     letter-spacing: 0.175em;
     color: rgba(255,255,255,.5);
-    -webkit-animation: fadeInHalfway 1.5s;
-       -moz-animation: fadeInHalfway 1.5s;
-        -ms-animation: fadeInHalfway 1.5s;
-         -o-animation: fadeInHalfway 1.5s;
-            animation: fadeInHalfway 1.5s;
+    animation: fadeInHalfway 1.5s;
 }
 i.down {
     position: absolute;
@@ -145,11 +133,7 @@ i.down {
     display: inline-block;
     padding: 6px;
     transform: rotate(45deg);
-    -webkit-animation: fadeInHalfway 1.5s;
-       -moz-animation: fadeInHalfway 1.5s;
-        -ms-animation: fadeInHalfway 1.5s;
-         -o-animation: fadeInHalfway 1.5s;
-            animation: fadeInHalfway 1.5s;
+    animation: fadeInHalfway 1.5s;
 }
 /* hover for 'scroll to about' button */
 #scrollAbout:hover {
@@ -162,60 +146,15 @@ i.down {
     color: rgba(255,255,255,.75);
 }
 /* bouncing animation */
-@-webkit-keyframes bounce {
-    to { bottom: 92px; }
-}
-@-moz-keyframes bounce {
-    to { bottom: 92px; }
-}
-@-moz-keyframes bounce {
-    to { bottom: 92px; }
-}
 @keyframes bounce {
     to { bottom: 92px; }
 }
 /* fade in */
-@-webkit-keyframes fadeIn {
-    0% { opacity:0; }
-    100% { opacity:1; }
-}
-@-moz-keyframes fadeIn {
-    0% { opacity:0; }
-    100% { opacity:1; }
-}
-@-ms-keyframes fadeIn {
-    0% { opacity:0; }
-    100% { opacity:1; }
-}
-@-o-keyframes fadeIn {
-    0% { opacity:0; }
-    100% { opacity:1; }
-}
 @keyframes fadeIn {
     0% { opacity:0; }
     100% { opacity:1; }
 }
 /* fade in halfway through animation duration */
-@-webkit-keyframes fadeInHalfway {
-    0% { opacity:0; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-moz-keyframes fadeInHalfway {
-    0% { opacity:0; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-ms-keyframes fadeInHalfway {
-    0% { opacity:0; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-o-keyframes fadeInHalfway {
-    0% { opacity:0; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
 @keyframes fadeInHalfway {
     0% { opacity:0; }
     50% { opacity:0; }
@@ -223,27 +162,76 @@ i.down {
 }
 
 /* ========== STICKY HEADER ========== */
+nav {
+    position: fixed;
+    top: 0;
+    padding: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+}
+nav button {
+    color: white;
+}
 #title {
-    padding: 15px;
     color: white;
     background-color: rgba(9,32,63, 1);
     z-index: 1000;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
     width: 100%;
-    opacity: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
-#title p {
+.logo {
     font-size: 24px;
+    padding: 0;
     color: white;
-    -webkit-animation: fadeIn .25s;
-       -moz-animation: fadeIn .25s;
-        -ms-animation: fadeIn .25s;
-         -o-animation: fadeIn .25s;
-            animation: fadeIn .25s;
+    position: fixed;
+    left: 40px;
+    animation: fadeIn .25s;
 }
-/* used for background of scrollAbout ease to match aboutMe */
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    padding: 0;
+    position: fixed;
+    right: 40px;
+    animation: fadeIn .25s;
+}
+.nav-links li {
+    list-style-type: none;
+}
+.nav-links button {
+    color: rgba(255,255,255, 0.5);
+}
+.nav-links button:hover {
+    color: white;
+    cursor: pointer;
+}
+.nav-links li p a {
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+.nav-links li p {
+    display: none;
+}
+.burger {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    padding: 0px;
+    margin: 5px;
+    background-color: white;
+}
+
+/* used for background of scrollAbout ease to match "about me" */
 #stickyOffset {
     padding: 0;
     background-color: rgba(9,32,63,.75);
@@ -252,7 +240,7 @@ i.down {
 
 
 /* ========== ABOUT ME ========== */
-#aboutMe {
+#about {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -324,20 +312,6 @@ i.down {
 }
 
 
-
-/* research */
-.experience {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    text-align: center;
-    background-color: rgba(9,32,63,.65);
-    color: white;
-    padding-top: 7.5vw;
-}
-
-
-
 /* ========== FOOTER ========== */
 footer {
     display: flex;
@@ -354,12 +328,6 @@ footer p {
     padding: 15px;
     color: black;
 }
-#scrollToTop {
-    color: black;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-}
 footer a {
     color: black;
     padding-left: 3vw;
@@ -369,7 +337,7 @@ footer a {
 footer i {
     font-size: 21px;
 }
-#scrollToTop:hover, footer a:hover{
+footer button p:hover, footer a:hover{
     cursor: pointer;
     color: gray;
 }
@@ -404,11 +372,26 @@ Extra (xl) large devices (large desktops, 1200px and up)
         font-size: 21px;
         padding-bottom: 5px;
     }
+    h4 {
+        font-size: 21px;
+    }
     p, .section p {
         font-size: 15px;
         line-height: 30px;
     }
-    #aboutMe {
+    #title {
+        padding-top: 4vh;
+        padding-bottom: 4vh;
+    }
+    .logo {
+        left: 25px;
+        opacity: 1;
+    }
+    .nav-links {
+        right: 25px;
+        width: 40%;
+    }
+    #about {
         padding-top: 10vw;
         padding-bottom: 10vw;
         padding-left: 12vw;
@@ -446,11 +429,14 @@ Extra (xl) large devices (large desktops, 1200px and up)
     h3 {
         font-size: 21px;
     }
+    h4 {
+        font-size: 18px;
+    }
     p, .section p {
         font-size: 15px;
         line-height: 20px;
     }
-    .aboutme {
+    .about {
         padding-left: 12vw;
         padding-right: 12vw;
     }
@@ -468,6 +454,9 @@ Extra (xl) large devices (large desktops, 1200px and up)
 
 /* mobile */
 @media screen and (max-width: 576px){
+    body {
+        overflow-x: hidden;
+    }
     header {
         display: none;
     }
@@ -477,16 +466,63 @@ Extra (xl) large devices (large desktops, 1200px and up)
     h3 {
         font-size: 15px;
     }
-    
-    #title {
-        padding: 10px;
+    .logo {
+        left: 20px;
         opacity: 1;
     }
-    #title p {
-        font-size: 18px;
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 40px;
+        background-color: #09203f;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
     }
-    .aboutme {
+    .nav-links li {
+        color: white;
+        opacity: 0;
+    }
+    .nav-links li p {
+        display: block;
+    }
+    .burger {
+        padding: 0px;
+        display: block;
+    }
+    .burger div {
+        transition: all 0.3s ease;
+    }
+    .about {
         padding-left: 9vw;
         padding-right: 9vw;
     }
+}
+.nav-active {
+    transform: translateX(0%);
+}
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        color: white;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2 {
+    opacity: 0;
+}
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px,-6px);
 }

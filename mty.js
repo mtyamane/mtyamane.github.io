@@ -1,18 +1,91 @@
-// TODO: BREAKPOINTS
+/*
+Functions used for Mark Yamane's website
+*/
+
+function navSlide() {
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.nav-links');
+  const navLinks = document.querySelectorAll('.nav-links li');
+
+  // toggle nav
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('nav-active');
+
+    // animate links
+    navLinks.forEach((link, index) => {
+      if (link.style.animation) {
+        link.style.animation = '';
+      } else {
+        link.style.animation = 'navLinkFade 0.5s ease forwards ' + (index/7 + 0.5) + 's';
+      }
+    });
+
+    // burger animation
+    burger.classList.toggle('toggle');
+    
+  });
+}
 
 // Scroll to "About Me"
 function toAbout() {
-  var sticky = document.getElementById("title");
+  const sticky = document.getElementById("title");
   document.body.scrollTop = window.innerHeight-sticky.offsetHeight + 5;
   document.documentElement.scrollTop = window.innerHeight-sticky.offsetHeight + 5;
 }
 
+// Scroll to top
+function toTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+// Scroll to "About Me" from navbar
+function toAboutNav() {
+  if (window.innerWidth <= 576) {
+    toTop();
+  } else {
+    toAbout();
+  }
+}
+// Scroll to "Projects" from navbar
+function toProjectsNav() {
+  const sticky = document.getElementById("title");
+  const about = document.getElementById("about");
+  
+  // scroll below "about me"
+  var scrollOffset = about.offsetHeight + 5;
+  
+  if (window.innerWidth > 576) {
+    // add header offset
+    scrollOffset += window.innerHeight-sticky.offsetHeight;
+  }
+  document.body.scrollTop = scrollOffset;
+  document.documentElement.scrollTop = scrollOffset;
+  
+}
+// Scroll to "Research" from navbar
+function toResearchNav() {
+  const sticky = document.getElementById("title");
+  const about = document.getElementById("about");
+  const proj = document.getElementById("projects");
+  
+  // scroll below "about me"
+  var scrollOffset = about.offsetHeight + proj.offsetHeight + 5;
+  
+  if (window.innerWidth > 576) {
+    // add header offset
+    scrollOffset += window.innerHeight-sticky.offsetHeight;
+  }
+  document.body.scrollTop = scrollOffset;
+  document.documentElement.scrollTop = scrollOffset;
+}
+
 // Change opacity of box shadow and header with the scroll
 function changeOpacity() {
-  var sticky = document.getElementById("title");
-  var background = document.getElementById("topHeader");
-  var layer = document.getElementById("layer");
-  var scrollAbout = document.getElementById("scrollAbout");
+  const sticky = document.getElementById("title");
+  const background = document.getElementById("topHeader");
+  const layer = document.getElementById("layer");
+  const scrollAbout = document.getElementById("scrollAbout");
   var offset = (window.innerHeight-sticky.offsetHeight + 1)*.95;
   var offsetTracker = Math.min(window.pageYOffset, offset)/offset;
   var boxOpacity = .6 + (.4 * offsetTracker);
@@ -23,17 +96,11 @@ function changeOpacity() {
   scrollAbout.style.opacity = buttonOpacity;
 }
 
-// Scroll to top
-function toTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-
 // Create sticky title
 var animateWords = true; // global variable, toggle title (sticky header) animation
 function stickyHeader() {
-  var sticky = document.getElementById("title");
-  var offset = document.getElementById("stickyOffset");
+  const sticky = document.getElementById("title");
+  const offset = document.getElementById("stickyOffset");
   // different options for mobile (750px wide) and web
   if (window.innerWidth >= 768) {
     // as soon as scrolling starts, hide the title
@@ -61,6 +128,7 @@ function stickyHeader() {
       offset.style.paddingTop = sticky.offsetHeight + "px";
   }
 }
+
 function reanimateWords() {
   var sticky = document.getElementById("title");
   // restart animation
@@ -78,4 +146,16 @@ function stopBounce() {
   } else {
     scrollAbout.style = "running";
   }
+}
+
+// call functions
+stickyHeader();
+navSlide();
+window.onscroll = function() {
+    changeOpacity();
+    stopBounce();
+    stickyHeader();
+}
+window.onresize = function() {
+    stickyHeader();
 }

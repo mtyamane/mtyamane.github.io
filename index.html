@@ -21,10 +21,36 @@
             </div>
         </header>
         <div id="stickyOffset"></div>
-        <div id="title"> <!-- start sticky title -->
-            <p>Mark Yamane</p>
-        </div> <!-- end sticky title -->
-        <div id="aboutMe">
+        <nav id="title"> <!-- start sticky title -->
+            <div class="logo">
+                <h4>Mark Yamane</h4>
+            </div>
+            <ul class = "nav-links">
+                <li>
+                    <button onclick="toAboutNav()">About Me</button>
+                </li>
+                <li>
+                    <button onclick="toProjectsNav()">Projects</button>
+                </li>
+                <li>
+                    <button onclick="toResearchNav()">Research</button>
+                </li>
+                <li>
+                    <p>
+                        <a href="mailto:marktyamane@gmail.com"><i class="far fa-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/mtyamane" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="pdfs/YamaneMark_Resume.pdf" target="_blank"><i class="far fa-file-pdf"></i></a>
+                        <a href="https://github.com/mtyamane" target="_blank"><i class="fab fa-github"></i></a>
+                    </p>
+                </li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav> <!-- end sticky title -->
+        <div id="about">
             <h2>About Me</h2>
             <p>
                 Hi, I'm Mark! I am an Eckerd College graduate from Shoreline, Washington with Bachelor of Science degrees in Computer 
@@ -33,7 +59,7 @@
                 I made this site to showcase some of my projects and past research, so feel free to check them out below!
             </p>
         </div>
-        <div class="section" style="background-color: rgba(9,32,63,.85);">
+        <div class="section" style="background-color: rgba(9,32,63,.85);" id="projects">
             <h2>Projects</h2>
             <div class="clearfix img-left">
                 <img src="images/lionfish.jpg" alt="Lionfish">
@@ -62,7 +88,7 @@
                         I created a discord bot called "Raxin" to facilitate reaction polls in Discord. I was the president of Tabletop Club at
                         Eckerd College when COVID hit the US in March 2021, so when Tabletop Club had to go virtual I chose Discord as the solution.
                         When we split out into groups or were deciding what games to play, it was often way too chaotic to go off of the chat 
-                        or audio conversations.I decided to create a bot to easily and intuitively create polls where people could respond using 
+                        or audio conversations. I decided to create a bot to easily and intuitively create polls where people could respond using 
                         the given reactions attached to the polls. This bot was used many times when we were virtual and still when we phased 
                         back to in-person meetings.
                     </p>
@@ -93,7 +119,7 @@
                 </div> <!-- end section content div -->
             </div> <!-- end clearfix div -->
         </div> <!-- end sections div -->
-        <div class="section" style="background-color: rgba(9,32,63,.75);">
+        <div class="section" style="background-color: rgba(9,32,63,.75);" id="research">
             <h2>Research</h2>
             <div class="clearfix img-right">
                 <img src="images/tortoise.png" alt="Tortoise results">
@@ -178,21 +204,11 @@
                 <a href="pdfs/YamaneMark_Resume.pdf" target="_blank"><i class="far fa-file-pdf"></i></a>
                 <a href="https://github.com/mtyamane" target="_blank"><i class="fab fa-github"></i></a>
             </p>
-            <button onclick="toTop()" id="scrollToTop"><p><b>Back to Top</b</p></a></button>
+            <button onclick="toTop()"><p><b>Back to Top</b</p></a></button>
             <!-- <p>
                 © 2022 Mark Yamane
             </p> -->
         </footer>
-        <script type="text/javascript">
-            stickyHeader();
-            window.onscroll = function() {
-                changeOpacity();
-                stopBounce();
-                stickyHeader();
-            }
-            window.onresize = function() {
-                stickyHeader();
-            }
-        </script>
+        <script src="mty.js"></script>
     </body>
 </html>
