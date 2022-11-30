@@ -382,6 +382,7 @@ Extra (xl) large devices (large desktops, 1200px and up)
     #title {
         padding-top: 4vh;
         padding-bottom: 4vh;
+        background-color: rgba(9,32,63, 1);
     }
     .logo {
         left: 25px;
@@ -470,22 +471,27 @@ Extra (xl) large devices (large desktops, 1200px and up)
     .nav-links {
         position: absolute;
         right: 0px;
-        height: 92vh;
-        top: 40px;
+        height: 90vh;
+        top: 5vh;
         background-color: #09203f;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: block;
         width: 100%;
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
+        text-align: center;
+        padding-top: 27vh;
     }
     .nav-links li {
         color: white;
         opacity: 0;
     }
+    .nav-links li button {
+        font-size: 4vh;
+        padding-bottom: 4vh;
+    }
     .nav-links li p {
         display: block;
+        font-size: 4vh;
     }
     .burger {
         padding: 0px;
