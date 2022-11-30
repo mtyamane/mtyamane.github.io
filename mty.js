@@ -1,7 +1,26 @@
 /*
 Functions used for Mark Yamane's website
 */
+function toggleNav() {
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.nav-links');
+  const navLinks = document.querySelectorAll('.nav-links li');
 
+  // toggle nav
+  nav.classList.toggle('nav-active');
+
+  // animate links
+  navLinks.forEach((link, index) => {
+    if (link.style.animation) {
+      link.style.animation = '';
+    } else {
+      link.style.animation = 'navLinkFade 0.5s ease forwards ' + (index/7 + 0.5) + 's';
+    }
+  });
+
+  // burger animation
+  burger.classList.toggle('toggle');
+}
 function navSlide() {
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.nav-links');
@@ -43,6 +62,7 @@ function toTop() {
 function toAboutNav() {
   if (window.innerWidth <= 576) {
     toTop();
+    toggleNav();      
   } else {
     toAbout();
   }
@@ -61,6 +81,9 @@ function toProjectsNav() {
   }
   document.body.scrollTop = scrollOffset;
   document.documentElement.scrollTop = scrollOffset;
+  if (window.innerWidth <= 576) {
+    toggleNav();
+  }
   
 }
 // Scroll to "Research" from navbar
@@ -78,6 +101,9 @@ function toResearchNav() {
   }
   document.body.scrollTop = scrollOffset;
   document.documentElement.scrollTop = scrollOffset;
+  if (window.innerWidth <= 576) {
+    toggleNav();
+  }
 }
 
 // Change opacity of box shadow and header with the scroll
@@ -102,7 +128,7 @@ function stickyHeader() {
   const sticky = document.getElementById("title");
   const offset = document.getElementById("stickyOffset");
   // different options for mobile (750px wide) and web
-  if (window.innerWidth >= 768) {
+  if (window.innerWidth >= 576) {
     // as soon as scrolling starts, hide the title
     sticky.style.opacity = "0";
     offset.style.paddingTop = "0px";
